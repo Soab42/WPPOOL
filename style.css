@@ -1,0 +1,235 @@
+/* css variable */
+:root {
+  --white: #fff;
+  --gray: #f3f3f3;
+  --black: #000;
+  --primary: #2042b6;
+  --secondary: #afcd80;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+  --color1: #fc714d;
+  --color2: #615de3;
+  --color3: #7ca63a;
+  --color4: #6f34a1;
+  --nantes: "Nantes", sans-serif;
+  --quicksand: "Quicksand", sans-serif;
+  --messina: "Messina Sans", sans-serif;
+  --neuehaas: "Neue Haas Unica W1G", sans-serif;
+}
+
+body {
+  font-family: "Nantes", sans-serif;
+}
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  padding: 10px 0;
+  font-family: "Messina Sans", sans-serif;
+}
+
+#hero {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  background-color: var(--primary);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nantes", sans-serif;
+  color: var(--white);
+  z-index: 1;
+}
+
+#hero img {
+  margin-top: 10px;
+  position: absolute;
+  /* mix-blend-mode: multiply; */
+  z-index: 0;
+  /* transform: scaleY(-1); */
+}
+#hero p {
+  font-family: "Messina Sans", sans-serif;
+}
+
+.line {
+  height: 2px;
+  width: 20px;
+  background-color: var(--white);
+  border-radius: 40px;
+}
+.status {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 10px 61px;
+}
+.status h1 {
+  font-family: Nantes;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 50.72px;
+  text-align: left;
+}
+.status p {
+  /* font-family: "Neue Haas Unica W1G", sans-serif; */
+  font-family: Neue Haas Unica W1G;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24.1px;
+  text-align: left;
+  color: #cdcdcd;
+}
+
+.accordion-header {
+  width: 208px;
+  height: 48px;
+  border-radius: 6px;
+  box-shadow: 0px 24px 24px 0px #0000001f;
+  cursor: pointer;
+  transition: all 0.5s;
+  padding: 5px;
+  background: #413d3d93;
+}
+
+.accordion-content {
+  max-height: 0;
+  color: var(--white);
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease;
+  padding: 0 10px;
+  background: #2c4b9e93;
+}
+
+.active .accordion-content {
+  max-height: 200px; /* Adjust this value based on the expected maximum height */
+  opacity: 1;
+  padding: 10px;
+}
+.active .accordion-header {
+  background: var(--primary);
+}
+.title h1 {
+  font-family: Nantes;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 50.72px;
+  text-align: left;
+}
+
+.select {
+  width: 178px;
+  height: 26px;
+  border-radius: 124px;
+  opacity: 0px;
+  background: var(--primary);
+  font-family: Messina Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  text-align: left;
+  color: var(--white);
+  padding-left: 10px;
+  margin: 10px 0px;
+}
+
+.radio {
+  width: 232px;
+  height: 30px;
+  border-radius: 124px;
+  opacity: 0px;
+  background: #eff3f6;
+  padding-inline: 10px;
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.radio li {
+  width: 36px;
+  height: 24px;
+  border-radius: 124px;
+  font-family: Messina Sans;
+  color: var(--black);
+  font-family: Messina Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio .active {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: 0px 4px 6px 0px #0000001f;
+  padding-inline: 10px;
+}
+
+table {
+  font-family: var(--messina);
+  font-size: 16px;
+  width: 100%;
+}
+.font-messina {
+  font-family: var(--messina);
+}
+.font-nuantes {
+  font-family: var(--nantes);
+}
+.font-quicksand {
+  font-family: var(--quicksand);
+}
+.font-neuehaas {
+  font-family: var(--neuehaas);
+}
+
+.animate-spinner-anti-clockwise {
+  animation: spinner-anti-clockwise 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.animate-spinner-clockwise {
+  animation: spinner-clockwise 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes spinner-anti-clockwise {
+  from {
+    transform: rotate(1360deg);
+  }
+}
+
+@keyframes spinner-clockwise {
+  from {
+    transform: rotate(-90deg);
+  }
+}
+
+.animate-dropdown {
+  animation: dropdown 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}

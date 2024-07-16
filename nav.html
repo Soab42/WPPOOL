@@ -1,0 +1,57 @@
+<nav
+  id="menu2"
+  class="nav px-10 py-3 bg-gray-200 text-black container rounded-xl mt-2 sticky top-10 z-50 relative"
+>
+  <!-- logo -->
+  <img src="./public/logow.svg" alt="logo" class="" />
+  <!-- menu -->
+  <div class="menu flex gap-2.5 juvstify-center items-center">
+    <img
+      src="./public/shareb.svg"
+      alt="share"
+      class="cursor-pointer ring-1 ring-[var(--primary)] rounded-full text-black"
+    />
+    <button
+      class="border w-[182px] h-[42px] rounded-full text-[12px] border-[var(--primary)]"
+    >
+      Download the 2024 Report
+    </button>
+    <div class="space-y-[7px] cursor-pointer open">
+      <div class="line bg-black"></div>
+      <div class="line bg-black"></div>
+      <div class="line bg-black"></div>
+    </div>
+  </div>
+  <div
+    class="absolute right-0 top-0 bg-white/80 backdrop-blur-sm p-5 rounded-lg shadow-lg shadow-black/20 menu hidden"
+  >
+    <div class="flex gap-5 juvstify-center items-center">
+      <img
+        src="./public/shareb.svg"
+        alt="share"
+        class="cursor-pointer ring-1 bg-[var(--secondary)] rounded-full"
+      />
+      <button
+        class="border w-[182px] h-[42px] rounded-full text-[12px] text-white bg-[var(--primary)]"
+      >
+        Download the 2024 Report
+      </button>
+      <div class="burger space-y-[7px] cursor-pointer close">
+        <div class="line bg-black rotate-45 translate-y-2"></div>
+        <div class="line bg-black -rotate-45 -translate-y-0.5"></div>
+      </div>
+    </div>
+    <ul class="flex flex-col gap-2 mt-8 text-md">
+      <li><a href="#">The WPPOOL Index</a></li>
+      <li><a href="#">All Companies</a></li>
+      <li><a href="#">Potential Future Listing</a></li>
+      <li><a href="#">State of USA</a></li>
+      <li><a href="$">Stories & Ideas</a></li>
+      <li><a href="#">About WPPOOL</a></li>
+      <li><a href="#">WPPOOL Portfolio Companies</a></li>
+      <li class="text-[var(--primary)] mt-2">
+        <a href="#">Visit WPPOOL</a>
+      </li>
+    </ul>
+  </div>
+</nav>

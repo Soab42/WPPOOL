@@ -17,9 +17,14 @@
   --messina: "Messina Sans", sans-serif;
   --neuehaas: "Neue Haas Unica W1G", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
 
 body {
   font-family: "Nantes", sans-serif;
+  scroll-snap-type: y mandatory;
 }
 nav {
   display: flex;

@@ -10,29 +10,54 @@
     <title>wppool</title>
   </head>
   <body class="flex flex-col items-center justify-center bg-[var(--gray)]">
-    <nav class="nav px-10 py-5 bg-[var(--primary)] container relative z-50">
+    <nav
+      class="nav px-10 py-5 top-5 rounded-t-md container relative z-50 bg-[var(--primary)]"
+      id="nav"
+    >
       <!-- logo -->
-      <img src="./public/logo.svg" alt="logo" />
-      <!-- menu -->
-      <div class="flex gap-5 juvstify-center items-center open">
+      <img src="./public/logo.svg" alt="logo" class="logo" />
+      <img src="./public/logow.svg" alt="logo" class="logos hidden" />
+
+      <!-- button -->
+      <div class="flex gap-2.5 juvstify-center items-center navbtns hidden">
+        <img
+          src="./public/shareb.svg"
+          alt="share"
+          class="cursor-pointer ring-1 ring-[var(--primary)] rounded-full"
+        />
+        <button
+          class="border w-[182px] h-[42px] rounded-full text-[12px] bg-[var(--primary)]"
+        >
+          Download the 2024 Report
+        </button>
+        <div class="space-y-[7px] cursor-pointer open">
+          <div class="line bg-black"></div>
+          <div class="line bg-black"></div>
+          <div class="line bg-black"></div>
+        </div>
+      </div>
+
+      <div class="flex gap-5 juvstify-center items-center navbtn">
         <img src="./public/share.svg" alt="share" class="cursor-pointer" />
         <button class="border w-[182px] h-[42px] rounded-full text-[12px]">
           Download the 2024 Report
         </button>
-        <div class="space-y-[7px] cursor-pointer">
+        <div class="space-y-[7px] cursor-pointer open">
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
         </div>
       </div>
+
+      <!-- menu  -->
       <div
-        class="absolute right-0 top-0 bg-white text-black right-5 p-5 rounded-lg shadow-lg shadow-black/20 menu hidden animate-dropdown"
+        class="absolute right-20 top-0 bg-white text-black right-5 p-5 rounded-lg shadow-lg shadow-black/20 menu hidden animate-dropdown"
       >
         <div class="flex gap-5 juvstify-center items-center">
           <img
             src="./public/shareb.svg"
             alt="share"
-            class="cursor-pointer ring-1 bg-[var(--secondary)] rounded-full animate-spinner-clockwise"
+            class="cursor-pointer ring-1 bg-[var(--secondary)] rounded-full"
           />
           <button
             class="border w-[182px] h-[42px] rounded-full text-[12px] text-white bg-[var(--primary)] animate-scale-in"
@@ -40,20 +65,20 @@
             Download the 2024 Report
           </button>
           <div
-            class="burger space-y-[7px] cursor-pointer close animate-spinner-anti-clockwise"
+            class="burger space-y-[7px] cursor-pointer close animate-spinner-anti-clockwise close"
           >
             <div class="line bg-black rotate-45 translate-y-2"></div>
             <div class="line bg-black -rotate-45 -translate-y-0.5"></div>
           </div>
         </div>
-        <ul class="flex flex-col gap-4 mt-8 text-md animate-dropdown">
-          <li><a href="#">The WPPOOL Index</a></li>
-          <li><a href="#">All Companies</a></li>
-          <li><a href="#">Potential Future Listing</a></li>
-          <li><a href="#">State of USA</a></li>
-          <li><a href="$">Stories & Ideas</a></li>
-          <li><a href="#">About WPPOOL</a></li>
-          <li><a href="#">WPPOOL Portfolio Companies</a></li>
+        <ul class="flex flex-col gap-4 mt-8 text-md animate-dropdown link">
+          <li><a href="#chart">The WPPOOL Index</a></li>
+          <li><a href="#company">All Companies</a></li>
+          <li><a href="#list">Potential Future Listing</a></li>
+          <li><a href="#state">State of USA</a></li>
+          <li><a href="#story">Stories & Ideas</a></li>
+          <li><a href="#about">About WPPOOL</a></li>
+          <li><a href="#portfolio">WPPOOL Portfolio Companies</a></li>
           <li class="text-[var(--primary)] mt-2">
             <a href="#">Visit WPPOOL</a>
           </li>
@@ -61,7 +86,7 @@
       </div>
     </nav>
     <!-- hero section -->
-    <section id="hero" class="container relative">
+    <section id="hero" class="container relative rounded-b-xl">
       <h1 class="text-[78px] font-bold z-10 leading-[93.6px]">
         The WPPOOL Index
       </h1>
@@ -77,7 +102,7 @@
       <img src="./public/rectangle.svg" alt="logo" class="icon" />
       <!-- status section -->
       <button
-        class="absolute bottom-10 right-10 bg-white size-16 shadow-lg shadow-black flex justify-center items-center rounded-full cursor-pointer"
+        class="scrollToDown z-10 absolute bottom-10 right-10 bg-white size-16 shadow-lg shadow-black flex justify-center items-center rounded-full cursor-pointer"
       >
         <img src="./public/down.svg" alt="logo" class="" />
       </button>
@@ -102,63 +127,8 @@
     </section>
 
     <!-- chart section -->
-    <nav
-      class="nav px-10 py-3 bg-gray-200 text-black container rounded-xl mt-2 sticky top-10 z-50 relative"
-    >
-      <!-- logo -->
-      <img src="./public/logow.svg" alt="logo" class="" />
-      <!-- menu -->
-      <div class="menu flex gap-2.5 juvstify-center items-center">
-        <img
-          src="./public/shareb.svg"
-          alt="share"
-          class="cursor-pointer ring-1 ring-[var(--primary)] rounded-full text-black"
-        />
-        <button
-          class="border w-[182px] h-[42px] rounded-full text-[12px] border-[var(--primary)]"
-        >
-          Download the 2024 Report
-        </button>
-        <div class="space-y-[7px] cursor-pointer open">
-          <div class="line bg-black"></div>
-          <div class="line bg-black"></div>
-          <div class="line bg-black"></div>
-        </div>
-      </div>
-      <div
-        class="absolute right-0 top-0 bg-white/80 backdrop-blur-sm p-5 rounded-lg shadow-lg shadow-black/20 menu hidden"
-      >
-        <div class="flex gap-5 juvstify-center items-center">
-          <img
-            src="./public/shareb.svg"
-            alt="share"
-            class="cursor-pointer ring-1 bg-[var(--secondary)] rounded-full"
-          />
-          <button
-            class="border w-[182px] h-[42px] rounded-full text-[12px] text-white bg-[var(--primary)]"
-          >
-            Download the 2024 Report
-          </button>
-          <div class="burger space-y-[7px] cursor-pointer close">
-            <div class="line bg-black rotate-45 translate-y-2"></div>
-            <div class="line bg-black -rotate-45 -translate-y-0.5"></div>
-          </div>
-        </div>
-        <ul class="flex flex-col gap-2 mt-8 text-md">
-          <li><a href="#">The WPPOOL Index</a></li>
-          <li><a href="#">All Companies</a></li>
-          <li><a href="#">Potential Future Listing</a></li>
-          <li><a href="#">State of USA</a></li>
-          <li><a href="$">Stories & Ideas</a></li>
-          <li><a href="#">About WPPOOL</a></li>
-          <li><a href="#">WPPOOL Portfolio Companies</a></li>
-          <li class="text-[var(--primary)] mt-2">
-            <a href="#">Visit WPPOOL</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <section class="chart flex container">
+
+    <section class="chart flex container mt-32" id="chart">
       <!-- chat menu -->
       <div class="chat-menu gap-2 bg-[var(--gray)]">
         <div class="accordion p-4 space-y-2">
@@ -283,7 +253,8 @@
     </section>
     <!-- company section -->
     <section
-      class="company-section container rounded-lg flex flex-col gap-5 p-4 bg-white rounded-lg pt-5 py-10"
+      id="company"
+      class="company-section container rounded-lg flex flex-col gap-5 p-4 bg-white rounded-lg pt-5 py-10 mt-10"
     >
       <div class="header flex gap-2 justify-between px-5">
         <h1 class="text-5xl">All companies</h1>
@@ -338,7 +309,7 @@
     </div>
 
     <!-- potential future listings -->
-    <section class="container Listing mt-10 space-y-5">
+    <section id="list" class="container Listing mt-10 space-y-5 mt-10">
       <h1 class="text-5xl font-bold">Potential Future Listings</h1>
       <p class="text-2xl w-2/3">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta minus
@@ -404,7 +375,7 @@
     </section>
 
     <!-- state of usa -->
-    <section class="container state mt-10 space-y-5 relative">
+    <section id="state" class="container state mt-20 space-y-5 relative">
       <img
         src="./public/bgGraph.svg"
         alt="bgGraph"
@@ -494,7 +465,7 @@
     </section>
 
     <!-- Stories and Ideas -->
-    <section class="container state mt-20 space-y-5 relative">
+    <section id="story" class="container state mt-40 space-y-5 relative">
       <h1 class="text-5xl font-bold">Stories and Ideas</h1>
       <p class="text-2xl w-2/3">The latest news and updates</p>
       <div class="list">
@@ -622,7 +593,8 @@
 
     <!-- about woopool -->
     <section
-      class="container About mt-20 space-y-5 bg-white rounded-lg shadow-black/20 shadow-xl flex justify-between gap-20"
+      id="about"
+      class="container About mt-40 space-y-5 bg-white rounded-lg shadow-black/20 shadow-xl flex justify-between gap-20"
     >
       <div class="text w-3/5 space-y-2 px-24 pt-20">
         <h1 class="text-5xl font-bold">About WPPOOL</h1>
@@ -658,9 +630,9 @@
 
     <!-- Selected WPPOOL Portfolio Companies -->
 
-    <section class="container mt-20 space-y-5">
+    <section id="portfolio" class="container mt-40 space-y-20">
       <h1 class="text-5xl">Selected WPPOOL Portfolio Companies</h1>
-      <div class="list grid grid-cols-5 gap-5">
+      <div class="list grid grid-cols-5 gap-5 mt-10">
         <div
           class="w-[17rem] flex justify-center items-center bg-white rounded-lg px-8"
         >
@@ -713,91 +685,38 @@
         >
           <img src="./public/img/brand/mier.png" alt="stripe" class="" />
         </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/toast.png" alt="stripe" class="" />
-        </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/vesrwell.png" alt="stripe" class="" />
-        </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/snapdocs.png" alt="stripe" class="" />
-        </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/alibaba.png" alt="stripe" class="" />
-        </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/conex.png" alt="stripe" class="" />
-        </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/mier.png" alt="stripe" class="" />
-        </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/toast.png" alt="stripe" class="" />
-        </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/vesrwell.png" alt="stripe" class="" />
-        </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/snapdocs.png" alt="stripe" class="" />
-        </div>
-        <div
-          class="w-[17rem] h-[120px] flex justify-center items-center bg-white rounded-lg px-8"
-        >
-          <img src="./public/img/brand/alibaba.png" alt="stripe" class="" />
-        </div>
       </div>
     </section>
 
     <!-- footer -->
-    <section class="container p-4 mt-20">
+    <section class="container p-4 mt-40 bg-gray-200">
       <div class="footer flex justify-between">
-        <h1 class="w-2/5 p-5 text-5xl">
+        <h1 class="w-2/4 p-5 text-5xl pr-10">
           Experience remarkable WordPress products with a new level of power,
           beauty, and human-centered designs.
         </h1>
-        <ul
-          class="w-2/5 text-2xl flex flex-col pl-4 items-center text-start pt-5 gap-1"
-        >
+        <ul class="text-2xl pl-4 text-start pt-5 space-y-2">
           <li class="text-gray-400">Jump to</li>
-          <li class="text-[var(--primary)]"><a href="#"> About Us </a></li>
-          <li class="text-[var(--primary)]"><a href="#"> Portfolio </a></li>
-          <li class="text-[var(--primary)]"><a href="#"> News </a></li>
-          <li class="text-[var(--primary)]"><a href="#"> Stories </a></li>
-          <li class="text-[var(--primary)]"><a href="#"> Jobs </a></li>
-          <li class="text-[var(--primary)]"><a href="#"> About Us </a></li>
+          <li class="text-[var(--primary)]"><a href="#about"> About Us </a></li>
+          <li class="text-[var(--primary)]">
+            <a href="#portfolio"> Portfolio </a>
+          </li>
+          <li class="text-[var(--primary)]"><a href="#news"> News </a></li>
+          <li class="text-[var(--primary)]"><a href="#story"> Stories </a></li>
+          <li class="text-[var(--primary)]"><a href="#jobs"> Jobs </a></li>
         </ul>
-        <div class="adress text-xl pt-5 space-y-2 w-2/5 align-center">
-          <div class="w-48">
+        <div class="adress text-xl pt-5 space-y-2 w-1/4 align-center">
+          <div class="px-4 w-2/3">
             <h1 class="font-bold capitalize">camBridge</h1>
-            <p class="w-2/3">
-              70728 Yost Burg, North Magdaleneview, UT 97952-2814
-            </p>
+            <p class="">70728 Yost Burg, North Magdaleneview, UT 97952-2814</p>
           </div>
           <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
-          <div class="w-48">
+          <div class="px-4 w-2/3">
             <h1 class="font-bold capitalize">London</h1>
             <p>70728 Yost Burg, North Magdaleneview, UT 97952-2814</p>
           </div>
           <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
-          <div class="w-48">
+          <div class="px-4 w-2/3">
             <h1 class="font-bold capitalize">Paris</h1>
             <p>70728 Yost Burg, North Magdaleneview, UT 97952-2814</p>
           </div>
@@ -834,23 +753,87 @@
 
     <script src="index.js" type="module"></script>
     <script>
-      const open = document.querySelector(".open");
+      // hamburger
+      const open = document.querySelectorAll(".open");
       const close = document.querySelector(".close");
-      open.addEventListener("click", () => {
-        const menu = document.querySelectorAll(".menu");
+      const menu = document.querySelector(".menu");
+      const link = document.querySelectorAll(".link");
+      const scrollToDown = document.querySelector(".scrollToDown");
+      // Select the navigation elements
+      const nav = document.querySelector("nav");
+      const logo = document.querySelector(".logo");
+      const logos = document.querySelector(".logos");
+      const btn = document.querySelector(".navbtn");
+      const btns = document.querySelector(".navbtns");
 
-        menu.forEach((item) => {
-          item.classList.toggle("hidden");
+      window.addEventListener("scroll", () => {
+        // Get the current vertical scroll position
+        const scrollY = window.scrollY;
+
+        // Add or remove classes based on the scroll position
+        if (scrollY > 816) {
+          nav.classList.add(
+            "sticky",
+            "bg-gray-200/80",
+            "backdrop-blur-md",
+            "rounded-xl",
+            "animate-dropdown",
+            "shadow-2xl"
+          );
+          nav.style.backgroundColor = "transparent";
+          logo.classList.add("hidden");
+          logos.classList.remove("hidden");
+          btn.classList.add("hidden");
+          btns.classList.remove("hidden");
+        } else {
+          nav.classList.remove(
+            "sticky",
+            "bg-gray-200/80",
+            "backdrop-blur-sm",
+            "rounded-xl",
+            "animate-dropdown"
+          );
+          nav.style.backgroundColor = "var(--primary)";
+          logo.classList.remove("hidden");
+          logos.classList.add("hidden");
+          btn.classList.remove("hidden");
+          btns.classList.add("hidden");
+        }
+      });
+
+      open.forEach((item) => {
+        item.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
         });
       });
+      // open.addEventListener("click", () => {
+      //   const menu = document.querySelectorAll(".menu");
+
+      //   menu.forEach((item) => {
+      //     item.classList.toggle("hidden");
+      //   });
+      // });
 
       close.addEventListener("click", () => {
-        const menu = document.querySelectorAll(".menu");
-
-        menu.forEach((item) => {
-          item.classList.toggle("hidden");
+        menu.classList.toggle("hidden");
+      });
+      console.log(scrollToDown);
+      scrollToDown.addEventListener("click", (event) => {
+        console.log("clicked");
+        // event.preventDefault();
+        window.scrollTo({
+          top: document.body.scrollHeight, // Changed from "1600px" to 1600
+          behavior: "smooth",
         });
       });
+
+      // close.addEventListener("click", () => {
+      //   const menu = document.querySelectorAll(".menu");
+
+      //   menu.forEach((item) => {
+      //     item.classList.toggle("hidden");
+      //   });
+      // });
     </script>
   </body>
 </html>

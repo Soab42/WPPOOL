@@ -23,10 +23,10 @@
         <img
           src="./public/shareb.svg"
           alt="share"
-          class="cursor-pointer ring-1 ring-[var(--primary)] rounded-full"
+          class="cursor-pointer ring-1 ring-[var(--primary)] rounded-full hidden md:block xl:block"
         />
         <button
-          class="border w-[182px] h-[42px] rounded-full text-[12px] bg-[var(--primary)]"
+          class="border w-[182px] h-[42px] rounded-full text-[12px] bg-[var(--primary)] hidden md:block xl:block"
         >
           Download the 2024 Report
         </button>
@@ -38,8 +38,14 @@
       </div>
 
       <div class="flex gap-5 juvstify-center items-center navbtn">
-        <img src="./public/share.svg" alt="share" class="cursor-pointer" />
-        <button class="border w-[182px] h-[42px] rounded-full text-[12px]">
+        <img
+          src="./public/share.svg"
+          alt="share"
+          class="cursor-pointer hidden md:block xl:block"
+        />
+        <button
+          class="border w-[182px] h-[42px] rounded-full text-[12px] hidden md:block xl:block"
+        >
           Download the 2024 Report
         </button>
         <div class="space-y-[7px] cursor-pointer open">
@@ -384,13 +390,13 @@
       <img
         src="./public/rectangleb.svg"
         alt="rectangle"
-        class="absolute left-[70%] translate-x-[-50%] top-[50%] scale-[8] opacity-20"
+        class="absolute left-[70%] translate-x-[-50%] top-[50%] scale-[8] opacity-20 z-1"
       />
       <h1 class="text-5xl font-bold">State of the USA</h1>
       <select
         name="year"
         id="year"
-        class="text-[42px] bg-[var(--primary)] text-white px-10 py-2 rounded-full"
+        class="text-2xl bg-[var(--primary)] text-white px-10 py-2 rounded-full"
         title="Year"
       >
         <option value="2022">2022</option>
@@ -403,61 +409,69 @@
         device.
       </p>
 
-      <div class="flex gap-2 overflow-x-auto">
+      <div class="flex gap-2 overflow-x-auto cardDiv">
         <img
           src="./public/card/wordpress.svg"
           alt="wp"
-          class="backdrop-blur-sm"
+          class="backdrop-blur-sm card"
         />
         <img src="./public/card/wp2.svg" alt="wp" class="backdrop-blur-sm" />
         <img
           src="./public/card/wordpress.svg"
           alt="wp"
-          class="backdrop-blur-sm"
+          class="backdrop-blur-sm card"
         />
         <img src="./public/card/wp2.svg" alt="wp" class="backdrop-blur-sm" />
         <img
           src="./public/card/wordpress.svg"
           alt="wp"
-          class="backdrop-blur-sm"
+          class="backdrop-blur-sm card"
         />
         <img src="./public/card/wp2.svg" alt="wp" class="backdrop-blur-sm" />
         <img
           src="./public/card/wordpress.svg"
           alt="wp"
-          class="backdrop-blur-sm"
+          class="backdrop-blur-sm card"
         />
         <img src="./public/card/wp2.svg" alt="wp" class="backdrop-blur-sm" />
       </div>
-      <div class="controls flex justify-between px-10 pr-20 font-messina">
-        <div class="flex gap-5 items-center text-xl pr-20">
-          <button class="p-4 rounded-full shadow-black/20 shadow-xl">
-            <img src="./public/down.svg" alt="left" class="rotate-90 size-6" />
-          </button>
-          <button class="p-4 rounded-full shadow-black/20 shadow-xl">
+      <div
+        class="controls flex gap-5 justify-between xl:px-10 xl:pr-20 font-messina"
+      >
+        <div class="flex gap-5 items-center xl:text-xl pr-20">
+          <button
+            class="flex justify-center items-center rounded-full shadow-black/20 shadow-xl size-16"
+            id="left"
+          >
             <img
               src="./public/down.svg"
-              alt="right"
-              class="-rotate-90 size-6"
+              alt="left"
+              class="rotate-90 object-contain"
             />
           </button>
+          <button
+            class="flex justify-center items-center rounded-full shadow-black/20 shadow-xl size-16"
+            id="right"
+          >
+            <img src="./public/down.svg" alt="right" class="-rotate-90" />
+          </button>
 
-          <span class=""> Pages</span>
+          <span class="hidden xl:block"> Pages</span>
           <select
             name="Pages"
-            id="Pages"
-            class="px-8 bg-white shadow-black/20 shadow-xl h-full rounded-full"
+            id="slidepage"
+            class="hidden xl:block px-8 bg-white shadow-black/20 shadow-xl rounded-full h-16"
+            title="Pages"
           >
-            <option value="1 and 2">1 and 2</option>
-            <option value="3 and 4">3 and 4</option>
-            <option value="5 and 6">5 and 6</option>
-            <option value="7 and 8">7 and 8</option>
-            <option value="9 and 10">9 and 10</option>
+            <option value="2">1 and 2</option>
+            <option value="4">3 and 4</option>
+            <option value="6">5 and 6</option>
+            <option value="8">7 and 8</option>
           </select>
-          <span>of 10</span>
+          <span class="hidden xl:block pageNo">of 10</span>
         </div>
         <button
-          class="bg-[var(--primary)] px-5 py-2 rounded-full shadow-xl shadow-black/20 text-white text-2xl"
+          class="bg-[var(--primary)] xl:px-5 py-2 px-3 rounded-full shadow-xl shadow-black/20 text-white xl:text-2xl w-fit"
         >
           Download the 2024 report
         </button>
@@ -759,6 +773,11 @@
       const menu = document.querySelector(".menu");
       const link = document.querySelectorAll(".link");
       const scrollToDown = document.querySelector(".scrollToDown");
+
+      // slider btn
+      const left = document.querySelector("#left");
+      const right = document.querySelector("#right");
+      const pageSelect = document.querySelector("#Pages");
       // Select the navigation elements
       const nav = document.querySelector("nav");
       const logo = document.querySelector(".logo");
@@ -817,9 +836,7 @@
       close.addEventListener("click", () => {
         menu.classList.toggle("hidden");
       });
-      console.log(scrollToDown);
       scrollToDown.addEventListener("click", (event) => {
-        console.log("clicked");
         // event.preventDefault();
         window.scrollTo({
           top: document.body.scrollHeight, // Changed from "1600px" to 1600
@@ -834,6 +851,37 @@
       //     item.classList.toggle("hidden");
       //   });
       // });
+
+      right.addEventListener("click", () => {
+        const chart = document.querySelector(".cardDiv");
+        const card = chart.querySelector(".card");
+        const cardWidth = card.offsetWidth;
+        // Calculate new scroll position to center the card
+        const newScrollPosition = chart.scrollLeft + cardWidth;
+
+        chart.scrollTo({
+          // left: chart.scrollLeft + chart.scrollWidth / 8,
+          left: newScrollPosition,
+          behavior: "smooth",
+        });
+      });
+
+      left.addEventListener("click", () => {
+        const chart = document.querySelector(".cardDiv");
+        chart.scrollTo({
+          left: chart.scrollLeft - chart.scrollWidth / 8,
+          behavior: "smooth",
+        });
+      });
+      slidepage.addEventListener("change", (event) => {
+        const chart = document.querySelector(".cardDiv");
+        const card = chart.querySelector(".card");
+        const cardWidth = card.offsetWidth;
+        chart.scrollTo({
+          left: cardWidth * Number(event.target.value) - chart.offsetWidth,
+          behavior: "smooth",
+        });
+      });
     </script>
   </body>
 </html>

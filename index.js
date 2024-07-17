@@ -61,7 +61,6 @@ company.forEach((element) => {
                       </div>`;
   document.getElementById("company").appendChild(card);
 });
-console.log(company);
 const ctx = document.getElementById("myChart");
 
 new Chart(ctx, {
